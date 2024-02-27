@@ -1,0 +1,245 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-m: "Marcellus SC", "Times New Roman", Georgia, serif;
+  --ff-r: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+}
+
+body {
+  font-family: var(--ff-r);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+header {
+  background-color: #f1f1f1;
+}
+
+nav {
+  padding: 1rem;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  & .nav-lhs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & .logo {
+    width: 5rem;
+  }
+
+  & .header-title {
+    padding-left: 1rem;
+    font-size: 2.5rem;
+    font-family: var(--ff-m);
+    color: #1f3e59;
+  }
+
+  & button {
+    margin-top: 1.25rem;
+    border: none;
+    outline: none;
+    border-radius: 0.25rem;
+    background-color: #1f3e59;
+    color: #f1f1f0;
+    padding: 1em 1.85em;
+    font-family: var(--ff-r);
+    font-weight: 600;
+    word-spacing: 0.2ch;
+  }
+
+  & button:hover,
+  button:focus {
+    background-color: #1a3246;
+  }
+}
+
+/* MAIN CONTAINER*/
+
+.main-title {
+  text-align: center;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  font-family: var(--ff-m);
+  color: #1a3246;
+}
+
+/* BOOK INFORMATION TABLE */
+
+table {
+  margin: 3rem auto;
+  border-collapse: collapse;
+}
+
+table thead {
+  color: #1a3246;
+  letter-spacing: 0.1ch;
+  border-bottom: 2px solid #1f3e59;
+/* 
+  & th:first-child {
+    max-width: 19.75rem;
+  }
+
+  & th:nth-child(2) {
+    max-width: 12.25rem;
+  } */
+}
+
+th {
+  text-align: left;
+  font-weight: 600;
+  padding: 1rem 0.5rem; 
+}
+
+tr {
+  border-bottom: 1px solid lightgray; 
+}
+
+td {
+  font-weight: 400;
+  padding: 1.25rem 0.5rem;
+}
+
+.fa-trash-can {
+  color: #d41c1c;
+  padding-left: 0.35em;
+}
+
+tr td:nth-child(4) button {
+  outline: none;
+  border: 1px solid lightgray;
+  border-radius: 0.3rem;
+  background-color: #fff;
+  padding: 0.75em 1em;
+  font-family: var(--ff-r);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+tr td:nth-child(4) button:hover {
+  border-color: #1a3246;
+}
+
+/* Dialog Box - Form to add new book */
+dialog {
+    padding: 1.25em;
+    background-color: #f1f1f0;
+    width: 20rem;
+    border-color: #1f3e59;
+    border-radius: 5px;
+
+    /* To center the dialog box */
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+
+    & .dialog-title {
+        text-align: center;
+        padding-block: 1.25rem;
+        text-transform: uppercase;
+        color: #1a3246;
+    }
+
+    & form {
+        text-align: center;
+
+        & .input-div + .input-div {
+            margin-top: 1rem;
+        }
+
+        & input, button {
+            border: none;
+            outline: none;
+            font-family: var(--ff-r);
+            font-size: 1rem;
+        }
+        
+        & input {
+            width: 100%;
+            padding: 1em;
+            border-radius: 0.75rem;
+            caret-color: #1f3e59;
+        }
+
+        & .checkbox-div {
+            display: grid;
+            grid-template-columns: auto 1em;
+            justify-content: center;
+            gap: 0.5em;
+        }
+
+        & button {
+            background-color: #1f3e59;
+            color: #f1f1f0;
+            border-radius: 5px;
+            font-weight: 700;
+            padding: 0.5em 1.25em;
+        }
+
+        & button:hover, button:focus {
+            background-color: #1a3246;
+        }
+    }
+}
+
+dialog::backdrop {
+    background-color: rgba(0,0,0,0.5);
+}
+
+
+/* MEDIA QUERIES */
+
+@media (min-width: 500px) {
+  nav {
+    flex-direction: row; 
+
+    & button {
+      margin: 0;
+    }
+  }
+}
+
+
+@media (min-width: 768px) {
+  nav {
+    /* To center nav */
+    width: 95%;
+    max-width: 1100px;
+    margin: 0 auto;
+
+  }
+}
+
+@media (min-width: 820px) {
+  nav {
+    width: 90%;
+  }
+}
+
+@media (min-width: 870px) {
+  nav {
+    width: 85%;
+  }
+}
+
+@media (min-width: 950px) {
+  nav {
+    width: 80%;
+  }
+}
+
