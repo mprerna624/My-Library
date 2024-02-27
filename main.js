@@ -26,7 +26,6 @@ function addBookToLibrary() {
     myLibrary.push(newBook);   
 
     displayBookTable();
-    // displayBookCards();
 }
 
 let submitBtn = document.querySelector("dialog form");
@@ -108,40 +107,3 @@ function changeStatusInTable() {
     } )
 }
 
-// In case of cards -- I have dropped this idea because it would have been very complex with both the layouts 
-// function displayBookCards() {
-//     let cardsGrid = document.querySelector(".cards-grid");
-//     cardsGrid.innerHTML = "";
-
-//     for (const [index, book] of myLibrary.entries()) {
-//         cardsGrid.innerHTML += 
-//         `<div class="card">
-//             <h2 class="book-title">${book.title}</h2>
-//             <h3 class="author">by ${book.author}</h3>
-//             <p class="pages">Pages: ${book.totalPages}</p>
-//             <div class="card-btns">
-//                 <button class="read-status-btn">${book.readStatus}</button>
-//                 <button class="delete-btn">DELETE</button>
-//             </div>
-//         </div>`;   
-
-//         let readBtn = document.querySelector(".read-status-btn");
-//         if(book.readStatus === "Read") {
-//             readBtn.classList.add('read');
-//         } else {
-//             readBtn.classList.add('not-read');
-//         }
-//     }
-
-//     deleteBookCard();
-// }
-
-// function deleteBookCard() {
-//     let delCardBtnArr = Array.from( document.getElementsByClassName('.delete-btn') );
-
-//     delCardBtnArr.forEach( (delCardBtn) => {
-//         delCardBtn.addEventListener('click', (e) => {
-//             let delCard = e.target.parentElement.parentElement;
-//         })
-//     } );
-// }
